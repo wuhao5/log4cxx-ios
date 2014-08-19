@@ -1,0 +1,9 @@
+[submodule "log4cxx"]
+	path = log4cxx
+	url = git@github.com:wuhao5/log4cxx.git
+[submodule "apr1.5"]
+	path = apr1.5
+	url = git@github.com:wuhao5/apr.git
+[submodule "apr-util1.5"]
+	path = apr-util1.5
+	url = git@github.com:wuhao5/apr-util.git
