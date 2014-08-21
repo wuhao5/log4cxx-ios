@@ -92,6 +92,9 @@ lipo_one() {
     ALL=$(find $INSTALL_PREFIX* -name $LIB);
     if [ -z "$ALL" ]; then return -1; fi
     lipo -create $ALL -o $LIB
+    if [[ $LIB =~ "dylib" ]]; then
+        install_name_tool -id "@executable_path/../Frameworks/`basename $LIB`" $LIB
+    fi
 }
 
 bundle() {
@@ -111,7 +114,7 @@ bundle() {
     cd ..
 }
 
-#prepare
+prepare
 
 rm -rf ${INSTALL_PREFIX}*
 build_mac_one x86_64
